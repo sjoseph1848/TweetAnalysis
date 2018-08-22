@@ -126,7 +126,7 @@ if __name__ == '__main__':
 
   api = twitter_client.get_twitter_client_api()
 
-  tweets = api.user_timeline(screen_name="tedcruz", count=100)
+  tweets = api.user_timeline(screen_name="betoorourke", count=200)
 
   df = tweet_analyzer.tweets_to_data_frame(tweets)
 
@@ -142,10 +142,10 @@ if __name__ == '__main__':
   # #Get the number of retwwets for the most retweeted tweet. 
   # print(np.max(df['retweets']))
 
-  # #Time Series _ panda series object
-  # # time_likes = pd.Series(data=df['likes'].values, index=df['date'])
-  # # time_likes.plot(figsize=(16,4),color='r')
-  # # plt.show()
+  #Time Series _ panda series object
+  time_likes = pd.Series(data=df['likes'].values, index=df['date'])
+  time_likes.plot(figsize=(16,4),color='r')
+  plt.show()
 
   # #Time Series for retweet 
   # # time_retweets = pd.Series(data=df['retweets'].values, index=df['date'])
